@@ -361,6 +361,14 @@
 	        });
 	           
 	           
+	           	if(localStorage.getItem("user-last-score")){
+	           			con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           			con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           			$('#last-result').html(con);
+	            }   
+	           
+	           
+	           
 	         $('#settings').on('pagebeforeshow', function(){
 			   if(localStorage.getItem("user-name")){
 			      $('#user-name').val(localStorage.getItem("user-name"));
@@ -826,6 +834,7 @@
                </div>
          </div>
 	      <div data-role="content">
+	      		<div id="last-result"></div>
 	          <ul data-role="listview" data-inset="true">
 	              <li><a href="javascript:showVirtualExam()">Virtual exam</a></li>
 	              <li><a href="javascript:showPracticeExam()">Short exam</a></li>
